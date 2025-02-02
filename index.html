@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Volunteer Opportunities</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -13,13 +16,14 @@
     </div>
     <h1>Volunteer Opportunities</h1>
     <input type="text" id="search-bar" placeholder="Search volunteer opportunities...">
-  </header>
+    <div id="suggestions-container"></div>
+  </header>   
 
   <section class="filter-section">
-    <h3>Filter by Interests</h3>
+    <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
     <div id="tags-container">
       <!-- Dynamically generated tags will go here -->
-    </div>
+
   </section>
 
   <section id="opportunities-container">

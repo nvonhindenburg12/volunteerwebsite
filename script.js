@@ -570,7 +570,7 @@ const opportunities = [
         "name": "KID Museum",
         "description": "A pioneering experiential museum and educational makerspace fostering skills to invent the future.",
         "tags": ["MD", "Youth Empowerment", "Research & Citizen Science", "Education", "STEM"],
-        "link": "https://kid-museum.org/getinvolved/teens/apprentice/"
+        "link": "https://kid-museum.org/get-involved/teens/"
       },
       {
         "name": "Leveling the Playing Field",
@@ -1043,18 +1043,23 @@ function renderTags() {
       updateSelectedTags();
     });
 
-    tagsContainer.appendChild(tagElement);
-  });
-}
 /****************************************************
  * 4) UPDATE SELECTED TAGS
  *    - Tracks all currently selected tags by text
  *    - Then calls applyFilters() to re-filter results
  ****************************************************/
+
 function updateSelectedTags() {
   selectedTags = Array.from(document.querySelectorAll('.tag.selected'))
     .map(tag => tag.textContent);
+  
+  // Update the count display
+  document.getElementById('selected-count').textContent = `(${selectedTags.length})`;
+  
   applyFilters();
+}
+tagsContainer.appendChild(tagElement);
+});
 }
 
 /****************************************************
@@ -1132,6 +1137,21 @@ function renderOpportunities(filteredOpportunities) {
 document.getElementById('search-bar').addEventListener('input', function() {
   searchTerm = this.value.toLowerCase();
   applyFilters();
+
+  const suggestions = getSearchSuggestions(searchTerm);
+  const suggestionsContainer = document.getElementById('suggestions-container');
+  suggestionsContainer.innerHTML = '';
+
+  suggestions.forEach(suggestion => {
+    const suggestionElement = document.createElement('div');
+    suggestionElement.textContent = suggestion;
+    suggestionElement.addEventListener('click', () => {
+      this.value = suggestion;
+      suggestionsContainer.innerHTML = '';
+      applyFilters();
+    });
+    suggestionsContainer.appendChild(suggestionElement);
+  });
 });
 
 /****************************************************
@@ -1142,3 +1162,21 @@ document.getElementById('search-bar').addEventListener('input', function() {
 renderTags();
 renderOpportunities(opportunities);
 
+document.getElementById('delete-tags').addEventListener('click', function() {
+  const selectedTags = document.querySelectorAll('.tag.selected');
+  selectedTags.forEach(tag => tag.classList.remove('selected'));
+  updateSelectedTags();  // This will update the filter and the count
+});
+
+function getSearchSuggestions(searchTerm) {
+  const filteredOpportunities = opportunities.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredTags = [...new Set(opportunities.flatMap(item => item.tags))].filter(tag =>
+    tag.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return [...filteredOpportunities.map(item => item.name), ...filteredTags];
+}
