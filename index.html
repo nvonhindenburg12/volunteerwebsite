@@ -17,19 +17,34 @@
     <h1>Volunteer Opportunities</h1>
     <input type="text" id="search-bar" placeholder="Search volunteer opportunities...">
     <div id="suggestions-container"></div>
-  </header>   
-
+  </header>
+    
   <section class="filter-section">
-    <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
+    <div class="filter-header">
+      <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
+      <div class="filter-toggle">
+        <label class="switch">
+          <input type="checkbox" id="filterToggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label">
+          All selected tags must match
+          <span class="info-icon" data-info="If toggled, only opportunities that have ALL selected tags will be shown.">ⓘ</span>
+        </span>
+      </div>
+
+    </div>
     <div id="tags-container">
       <!-- Dynamically generated tags will go here -->
-
+    </div>
   </section>
 
   <section id="opportunities-container">
     <!-- Dynamically generated volunteer opportunities will go here -->
   </section>
 
+  <button id="scroll-top" class="scroll-top-btn">↑</button>
+  
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,10 +1,3 @@
-/****************************************************
- * 1) Updated Opportunities Array (Duplicates Merged)
- *    - e.g., Girl Scouts, Girls on the Run, Habitat
- *      for Humanity now appear only once with all
- *      their relevant tags combined.
- ****************************************************/
-
 
 const opportunities = [
   {
@@ -217,12 +210,7 @@ const opportunities = [
     "tags": ["DC", "Youth Empowerment", "Social Advocacy & Activism"],
     "link": "https://www.jackandjillinc.org/programs/"
   },
-  {
-    "name": "KEEN",
-    "description": "Pairs trained volunteer coaches with young people with disabilities for sports and recreational activities.",
-    "tags": ["DC", "Accessibility", "Sports"],
-    "link": "https://www.keengreaterdc.org/volunteers"
-  },
+
   {
     "name": "Kid Power Inc.",
     "description": "Helps underserved DCPS students grow through academic success, leadership development, and healthy living initiatives.",
@@ -420,12 +408,11 @@ const opportunities = [
     "description": "Fosters spiritual, mental and physical development of individuals, families and communities through inclusive programs.",
     "tags": ["DC", "MD", "VA", "Social Advocacy & Activism", "Community Development"],
     "link": "https://www.ymcadc.org/virtual-volunteer-opportunities/"
-  },
-  {
-       "name": "GDS Buddy Program",
+  },{
+        "name": "GDS Buddy Program",
         "description": "Connects students from across divisions in 1:1 pairs for regular conversation and connection, with weekly calls and guided activities throughout each session.",
         "tags": ["GDS Opportunities", "Education", "Youth Empowerment"],
-        "link": "Email mmckeever@gds.org with interest"
+        "link": "mailto:mmckeever@gds.org?subject=Interest in GDS Buddy Program"
       },
       {
         "name": "GDS Policy Institute",
@@ -437,38 +424,36 @@ const opportunities = [
         "name": "GDS Voter Mobilization Initiative",
         "description": "Unites DMV-area students to mobilize voters and combat voter suppression through registration, education, and legislation initiatives.",
         "tags": ["GDS Opportunities", "Social Advocacy & Activism", "Education", "Community Development"],
-        "link": "Email studentaction@gds.org"
+        "link": "mailto:studentaction@gds.org?subject=Interest in GDS Voter Mobilization Initiative"
       },
       {
         "name": "HopShop",
         "description": "Improves student well-being by selling products and healthy food, providing business learning opportunities, and donating proceeds to nonprofits aligned with shared values.",
         "tags": ["GDS Opportunities", "Education", "Community Development", "Food Insecurity"],
-        "link": "Email hopshop@gds.org"
+        "link": "mailto:hopshop@gds.org?subject=Interest in HopShop"
       },
       {
         "name": "Jobs to Help",
         "description": "Student-founded initiative that encourages volunteers to fulfill odd jobs for neighbors, with payments made through donations to Black Lives Matter organizations and Covid relief efforts.",
         "tags": ["GDS Opportunities", "Community Development", "Social Advocacy & Activism"],
-        "link": "Email jobstohelp.dc@gmail.com"
+        "link": "mailto:jobstohelp.dc@gmail.com?subject=Interest in Jobs to Help"
       },
       {
         "name": "K4K (Kards for Kids)",
         "description": "Brings joy to hospitalized children by providing them with hand-crafted cards.",
         "tags": ["GDS Opportunities", "Youth Empowerment", "Healthcare"],
-        "link": ""
+        "link": "mailto:ltait@gds.org?subject=Interest in K4K (Kards for Kids)"
       },
       {
         "name": "Student Action Committee",
         "description": "Engages students in various initiatives including Voter Mobilization, Environmental Task Force, and Art Initiative to take action in the GDS community, DC, and nationwide.",
         "tags": ["GDS Opportunities", "Social Advocacy & Activism", "Environmental Justice", "Education", "Community Development"],
-        "link": "Email studentaction@gds.org"
-      },
-      {
+        "link": "mailto:studentaction@gds.org?subject=Interest in Student Action Committee"
+      },{
         "name": "Summit on Sexual Assault and Consent",
         "description": "A conference bringing together students, faculty, administrators, and parents from high schools nationwide to discuss sexual violence affecting people of all backgrounds.",
         "tags": ["GDS Opportunities", "Social Advocacy & Activism", "Education"],
-        "link": "Email ltait@gds.org"
-        
+        "link": "mailto:ltait@gds.org?subject=Interest in Summit on Sexual Assault and Consent"
       },
       {
         "name": "Adventist HealthCare Shady Grove Medical Center",
@@ -563,7 +548,7 @@ const opportunities = [
       {
         "name": "KEEN (Kids Enjoying Exercise Now)",
         "description": "Pairs trained volunteer coaches with young people with disabilities for sports and recreational activities.",
-        "tags": ["MD", "DC", "VA", "Youth Empowerment", "Accessibility", "Sports"],
+        "tags": ["MD", "DC", "VA", "Remote Opportunities", "Youth Empowerment", "Accessibility", "Sports"],
         "link": "https://www.keengreaterdc.org/volunteers"
       },
       {
@@ -716,12 +701,6 @@ const opportunities = [
             "link": "https://www.habitat.org/volunteer"
           },
           {
-            "name": "KEEN (Kids Enjoying Exercise Now)",
-            "description": "Pairs trained volunteer coaches with young people with disabilities for sports and recreational activities.",
-            "tags": ["VA", "DC", "MD", "Youth Empowerment", "Accessibility", "Sports"],
-            "link": "https://www.keengreaterdc.org/volunteers"
-          },
-          {
             "name": "Lost Dog and Cat Rescue Foundation",
             "description": "Helps homeless pets find loving homes through rescue and adoption, working to create a world free of homeless pets.",
             "tags": ["VA", "Animal Welfare"],
@@ -815,12 +794,6 @@ const opportunities = [
                 "description": "Connects volunteer tutors with students for high-quality, one-on-one online tutoring to bridge educational divides.",
                 "tags": ["Remote Opportunities", "Education", "Youth Empowerment"],
                 "link": "https://docs.google.com/forms/d/e/1FAIpQLSe3x_gbcsmW3Qmngkr20SN3aOTkUK7-IwTsR5GjLApmWM3ayA/viewform"
-              },
-              {
-                "name": "KEEN",
-                "description": "Provides online programs and social sessions for athletes with disabilities through volunteer-led activities.",
-                "tags": ["Remote Opportunities", "Accessibility", "Sports", "Youth Empowerment"],
-                "link": "https://www.keengreaterdc.org/virtual-volunteer-opportunities-during-covid"
               },
               {
                 "name": "Latino Student Fund",
@@ -993,21 +966,19 @@ const opportunities = [
 ];
 
 /****************************************************
- * 2) Global Variables for Search Term & Selected Tags
+ * Global Variables
  ****************************************************/
 let searchTerm = '';
 let selectedTags = [];
+let isStrictFiltering = false;  // for AND/OR filtering toggle
 
 /****************************************************
- * 3) RENDER ALL UNIQUE TAGS
- *    - Removes duplicates across opportunities
- *    - Creates clickable <span> for each unique tag
+ * Functions
  ****************************************************/
 function renderTags() {
   const tagsContainer = document.getElementById('tags-container');
   const allTags = [...new Set(opportunities.flatMap(item => item.tags))];
 
-  // Define the order of the specific tags
   const orderedTags = [
     'DC',
     'MD',
@@ -1017,10 +988,7 @@ function renderTags() {
     'Travel Experiences'
   ];
 
-  // Filter out the specific tags from allTags
   const remainingTags = allTags.filter(tag => !orderedTags.includes(tag));
-
-  // Combine the specific tags and remaining tags in the desired order
   const sortedTags = [...orderedTags, ...remainingTags];
 
   tagsContainer.innerHTML = '';
@@ -1030,67 +998,71 @@ function renderTags() {
     tagElement.classList.add('tag');
     tagElement.textContent = tag;
 
-    // Clean up the tag string for a valid CSS class
     const className = tag
-      .replace(/\s+/g, '')    // remove spaces
-      .replace(/&/g, '')      // remove ampersand
-      .replace(/\+/g, '');    // remove plus sign
+      .replace(/\s+/g, '')
+      .replace(/&/g, '')
+      .replace(/\+/g, '');
     tagElement.classList.add(`tag-${className}`);
 
-    // On click, toggle selection
     tagElement.addEventListener('click', () => {
       tagElement.classList.toggle('selected');
       updateSelectedTags();
     });
 
-/****************************************************
- * 4) UPDATE SELECTED TAGS
- *    - Tracks all currently selected tags by text
- *    - Then calls applyFilters() to re-filter results
- ****************************************************/
+    tagsContainer.appendChild(tagElement);
+  });
+
+  // Add reset filters button at the end
+  const resetButton = document.createElement('span');
+  resetButton.classList.add('tag', 'reset-button');
+  resetButton.textContent = 'Reset Filters';
+  resetButton.addEventListener('click', resetFilters);
+  tagsContainer.appendChild(resetButton);
+}
 
 function updateSelectedTags() {
-  selectedTags = Array.from(document.querySelectorAll('.tag.selected'))
+  selectedTags = Array.from(document.querySelectorAll('.tag.selected:not(.reset-button)'))
     .map(tag => tag.textContent);
   
-  // Update the count display
   document.getElementById('selected-count').textContent = `(${selectedTags.length})`;
-  
   applyFilters();
 }
-tagsContainer.appendChild(tagElement);
-});
+
+function resetFilters() {
+  document.getElementById('search-bar').value = '';
+  searchTerm = '';
+
+  const selectedTagElements = document.querySelectorAll('.tag.selected:not(.reset-button)');
+  selectedTagElements.forEach(tag => tag.classList.remove('selected'));
+  
+  selectedTags = [];
+  document.getElementById('selected-count').textContent = '(0)';
+  applyFilters();
 }
 
-/****************************************************
- * 5) APPLY ALL FILTERS (SEARCH + TAGS)
- *    - 1) Filter by name/description (searchTerm)
- *    - 2) Filter by all selectedTags
- *    - Renders only the final matching list
- ****************************************************/
 function applyFilters() {
-  // First, filter by search
+  console.log('Filtering with strict mode:', isStrictFiltering); // Debug log
+  
   let filtered = opportunities.filter(item =>
     item.name.toLowerCase().includes(searchTerm) ||
     item.description.toLowerCase().includes(searchTerm)
   );
 
-  // Next, filter by selected tags
   if (selectedTags.length > 0) {
-    filtered = filtered.filter(item =>
-      // Return true only if ALL selected tags are in the item.tags
-      selectedTags.every(tag => item.tags.includes(tag))
-    );
+    filtered = filtered.filter(item => {
+      if (isStrictFiltering) {
+        // AND filtering - all selected tags must match
+        return selectedTags.every(tag => item.tags.includes(tag));
+      } else {
+        // OR filtering - any selected tag can match
+        return item.tags.some(tag => selectedTags.includes(tag));
+      }
+    });
   }
 
-  // Finally, render
   renderOpportunities(filtered);
 }
 
-/****************************************************
- * 6) RENDER OPPORTUNITIES
- *    - Also displays each opportunity's tags
- ****************************************************/
 function renderOpportunities(filteredOpportunities) {
   const container = document.getElementById('opportunities-container');
   container.innerHTML = '';
@@ -1099,14 +1071,12 @@ function renderOpportunities(filteredOpportunities) {
     const card = document.createElement('div');
     card.classList.add('opportunity-card');
 
-    // Build tags row
     const tagsDiv = document.createElement('div');
     tagsDiv.classList.add('tags');
 
     item.tags.forEach(t => {
       const tagSpan = document.createElement('span');
       tagSpan.classList.add('tag');
-      // Clean up text for color class
       const className = t
         .replace(/\s+/g, '')
         .replace(/&/g, '')
@@ -1116,23 +1086,32 @@ function renderOpportunities(filteredOpportunities) {
       tagsDiv.appendChild(tagSpan);
     });
 
-    // Insert main HTML
     card.innerHTML = `
       <h4>${item.name}</h4>
       <p>${item.description}</p>
       <a href="${item.link}" target="_blank">Learn More</a>
     `;
 
-    // Append the tags row at the bottom
     card.appendChild(tagsDiv);
-
     container.appendChild(card);
   });
 }
 
+function getSearchSuggestions(searchTerm) {
+  const filteredOpportunities = opportunities.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredTags = [...new Set(opportunities.flatMap(item => item.tags))].filter(tag =>
+    tag.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return [...filteredOpportunities.map(item => item.name), ...filteredTags];
+}
+
 /****************************************************
- * 7) SET UP SEARCH BAR LISTENER
- *    - On input, update searchTerm and applyFilters()
+ * Event Listeners
  ****************************************************/
 document.getElementById('search-bar').addEventListener('input', function() {
   searchTerm = this.value.toLowerCase();
@@ -1154,29 +1133,21 @@ document.getElementById('search-bar').addEventListener('input', function() {
   });
 });
 
+document.getElementById('filterToggle').addEventListener('change', function() {
+  isStrictFiltering = this.checked;
+  console.log('Toggle changed, strict filtering is now:', isStrictFiltering); // Debug log
+  applyFilters();
+});
+
 /****************************************************
- * 8) INITIAL RENDER:
- *    - Render the tag buttons
- *    - Render all opportunities by default
+ * Initialize
  ****************************************************/
 renderTags();
 renderOpportunities(opportunities);
 
-document.getElementById('delete-tags').addEventListener('click', function() {
-  const selectedTags = document.querySelectorAll('.tag.selected');
-  selectedTags.forEach(tag => tag.classList.remove('selected'));
-  updateSelectedTags();  // This will update the filter and the count
+document.querySelectorAll('.info-icon').forEach(icon => {
+  icon.addEventListener('mouseover', () => {
+    const info = icon.getAttribute('data-info');
+    console.log(`Hovered over info icon: ${info}`);
+  });
 });
-
-function getSearchSuggestions(searchTerm) {
-  const filteredOpportunities = opportunities.filter(item =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const filteredTags = [...new Set(opportunities.flatMap(item => item.tags))].filter(tag =>
-    tag.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return [...filteredOpportunities.map(item => item.name), ...filteredTags];
-}
