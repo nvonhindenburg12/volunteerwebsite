@@ -12,10 +12,12 @@
 <body>
   <header>
     <div class="logo-banner">
-      <img src="images/logo.png" alt="Georgetown Day School Logo">
-    </div>
+      <a href="https://www.gds.org/academics/community-engagement">
+          <img src="images/logo.png" alt="Georgetown Day School Logo">
+      </a>
+  </div>
     <h1>Volunteer Opportunities</h1>
-    <input type="text" id="search-bar" placeholder="Search volunteer opportunities...">
+    <input type="text" id="search-bar" placeholder="Search volunteer opportunities">
     <div id="suggestions-container"></div>
   </header>
     
@@ -28,8 +30,11 @@
           <span class="slider round"></span>
         </label>
         <span class="toggle-label">
-          All selected tags must match
-          <span class="info-icon" data-info="If toggled, only opportunities that have ALL selected tags will be shown.">ⓘ</span>
+          Opportunities with all selected tags
+          <span class="info-icon" data-info="If enabled, only opportunities that match EVERY tag you selected will be displayed.
+
+
+          ">ⓘ</span>
         </span>
       </div>
 
@@ -43,8 +48,9 @@
     <!-- Dynamically generated volunteer opportunities will go here -->
   </section>
 
-  <button id="scroll-top" class="scroll-top-btn">↑</button>
+  <button id="scroll-top" class="scroll-top-btn">⬆</button>
   
+
   <script src="script.js"></script>
 </body>
 </html>

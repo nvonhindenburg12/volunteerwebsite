@@ -13,12 +13,6 @@ const opportunities = [
     "link": "https://afroamcivilwar.org/ways-to-participate/#volunteer"
   },
   {
-    "name": "Boy Scouts of America",
-    "description": "Focuses on helping youth do their best to help other people through group service projects and community engagement.",
-    "tags": ["DC", "Social Advocacy & Activism", "Youth Empowerment"],
-    "link": "https://www.scouting.org/outdoor-programs/conservation-and-environment/youth-service/"
-  },
-  {
     "name": "Bread for the City",
     "description": "Helps DC residents living with low income by providing food, clothing, medical care, and legal services to reduce the burden of poverty.",
     "tags": ["DC", "Food Insecurity", "Community Development"],
@@ -28,7 +22,7 @@ const opportunities = [
     "name": "Breadcoin",
     "description": "A nonprofit organization providing food tokens as a tool to enable community response to hunger, operating in multiple DC neighborhoods.",
     "tags": ["DC", "Food Insecurity"],
-    "link": "https://breadcoin.org/volunteer/"
+    "link": "https://breadcoin.org/locations/dc/"
   },
   {
     "name": "Capital Area Food Bank",
@@ -150,12 +144,7 @@ const opportunities = [
     "tags": ["DC", "Housing & Homelessness"],
     "link": "https://georgetownministrycenter.org/help/volunteer/"
   },
-  {
-    "name": "Girl Scouts of America",
-    "description": "Empowers girls through various community service projects and leadership development activities.",
-    "tags": ["DC", "Social Advocacy & Activism", "Youth Empowerment"],
-    "link": "https://www.girlscouts.org/en/girl-scouts-at-home/troop-leaders/national-service-projects.html"
-  },
+
   {
     "name": "Girls on the Run",
     "description": "Inspires girls to recognize their inner strength through research-based curricula including discussions, activities and running games.",
@@ -516,12 +505,6 @@ const opportunities = [
         "link": "https://www.fcmd.org/templates/articlecco_cdo/aid/720969/jewish/Volunteer.htm"
       },
       {
-        "name": "Girl Scouts of America",
-        "description": "Empowers girls through various community service projects and leadership development activities.",
-        "tags": ["MD", "DC", "VA", "Social Advocacy & Activism", "Youth Empowerment"],
-        "link": "https://www.girlscouts.org/en/girl-scouts-at-home/troop-leaders/national-service-projects.html"
-      },
-      {
         "name": "Girls on the Run",
         "description": "Inspires girls to recognize their inner strength through research-based curricula including discussions, activities and running games.",
         "tags": ["MD", "DC", "VA", "Youth Empowerment", "Sports"],
@@ -657,12 +640,6 @@ const opportunities = [
             "description": "Provides dignified access to free groceries allowing families to devote limited resources to other basic needs.",
             "tags": ["VA", "Food Insecurity", ],
             "link": "https://afac.org/volunteer/"
-          },
-          {
-            "name": "Boy Scouts of America",
-            "description": "Focuses on helping youth do their best to help other people through group service projects and community engagement.",
-            "tags": ["VA", "DC", "MD", "Social Advocacy & Activism", "Youth Empowerment"],
-            "link": "https://www.scouting.org/outdoor-programs/conservation-and-environment/youth-service/"
           },
           {
             "name": "Chesapeake Bay Foundation",
@@ -1029,14 +1006,24 @@ function updateSelectedTags() {
 }
 
 function resetFilters() {
+  // Reset search bar
   document.getElementById('search-bar').value = '';
   searchTerm = '';
 
+  // Reset all selected tags
   const selectedTagElements = document.querySelectorAll('.tag.selected:not(.reset-button)');
   selectedTagElements.forEach(tag => tag.classList.remove('selected'));
   
+  //Reset the toggle switch
+  // const filterToggle = document.getElementById('filterToggle');
+  // filterToggle.checked = false;
+  // isStrictFiltering = false;
+  
+  // Reset tags count and array
   selectedTags = [];
   document.getElementById('selected-count').textContent = '(0)';
+  
+  // Apply the filters
   applyFilters();
 }
 
@@ -1151,3 +1138,22 @@ document.querySelectorAll('.info-icon').forEach(icon => {
     console.log(`Hovered over info icon: ${info}`);
   });
 });
+
+// Show/hide scroll-to-top button based on scroll position
+window.addEventListener('scroll', function() {
+  const scrollTopBtn = document.getElementById('scroll-top');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+});
+
+// Scroll to top smoothly when the button is clicked
+document.getElementById('scroll-top').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
