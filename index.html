@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer Opportunities</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Opportunities</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo-banner">
-      <a href="https://www.gds.org/academics/community-engagement">
-          <img src="images/logo.png" alt="Georgetown Day School Logo">
-      </a>
-  </div>
-    <h1>Volunteer Opportunities</h1>
-    <input type="text" id="search-bar" placeholder="Search volunteer opportunities">
-    <div id="suggestions-container"></div>
-  </header>
-    
-  <section class="filter-section">
-    <div class="filter-header">
-      <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
-      <div class="filter-toggle">
-        <label class="switch">
-          <input type="checkbox" id="filterToggle">
-          <span class="slider round"></span>
-        </label>
-        <span class="toggle-label">
-          Opportunities with all selected tags
-          <span class="info-icon" data-info="If enabled, only opportunities that match EVERY tag you selected will be displayed.
+    <header>
+        <div class="logo-banner">
+            <a href="https://www.gds.org/academics/community-engagement">
+                <img src="images/logo.png" alt="Georgetown Day School Logo">
+            </a>
+        </div>
+        <h1>Volunteer Opportunities</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search volunteer opportunities">
+            <div id="suggestions-container"></div>
+        </div>
+    </header>
 
+    <section class="filter-section">
+        <div class="filter-header">
+            <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
+            <div class="filter-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="filterToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">
+                    Opportunities with all selected tags
+                    <span class="info-icon" data-info="If enabled, only opportunities that match EVERY tag you selected will be displayed.">ⓘ</span>
+                </span>
+            </div>
+        </div>
+        <div id="tags-container"></div>
+    </section>
 
-          ">ⓘ</span>
-        </span>
+    <section id="opportunities-container"></section>
+
+    <button id="scroll-top" class="scroll-top-btn">⬆</button>
+
+    <div id="custom-popup" class="popup-container">
+      <div class="popup-content">
+          <p>Please select a suggested tag or opportunity</p>
+          <button onclick="closePopup()" class="close-popup">OK</button>
       </div>
-
     </div>
-    <div id="tags-container">
-      <!-- Dynamically generated tags will go here -->
-    </div>
-  </section>
 
-  <section id="opportunities-container">
-    <!-- Dynamically generated volunteer opportunities will go here -->
-  </section>
-
-  <button id="scroll-top" class="scroll-top-btn">⬆</button>
-  
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
