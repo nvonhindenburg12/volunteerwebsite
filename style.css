@@ -11,7 +11,7 @@ body {
   text-align: left;
   padding: 15px 50px;
   width: calc(100% - 10px);
-  margin: 5px 5px 0 5px;
+  margin: 2px 5px 0 5px;
   box-sizing: border-box;
   border-radius: 25px;
   position: relative;
@@ -21,7 +21,6 @@ body {
   max-height: 50px;
   margin-left: -30px;
 }
-
 header {
   background-color: #ffffff;
   color: #333;
@@ -30,17 +29,25 @@ header {
   margin: 0;
   animation: fadeInDown 0.8s ease-out;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-container {
   position: relative;
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
+  text-align: center;
 }
+
+
+
 
 #suggestions-container {
   position: absolute;
+  width: 650px;
   top: 100%;
   left: 0;
   right: 0;
@@ -117,6 +124,7 @@ h1 {
   color: rgb(20, 102, 54);
   position: relative;
   display: inline-block;
+  
 }
 
 h1::after {
@@ -137,7 +145,8 @@ h1:hover::after {
 
 #search-bar {
   width: 100%;
-  padding: 15px 25px;
+  max-width: 700px;  /* Or whatever max-width you prefer */
+  padding: 15px 50px 15px 25px;
   font-size: 16px;
   font-family: 'Nunito', 'Helvetica Neue', sans-serif;
   border: 2px solid #e0e0e0;
@@ -146,6 +155,7 @@ h1:hover::after {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 #search-bar:focus {
@@ -158,7 +168,8 @@ h1:hover::after {
   padding: 35px 50px;
   background-color: #ffffff;
   margin: 20px 50px;
-  border-radius: 15px;
+  margin-bottom: 40px;
+  border-radius: 15px 15px 1px 15px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -484,4 +495,48 @@ input:checked + .slider:before {
       opacity: 1;
       transform: translateY(0);
   }
+}
+
+.filter-section {
+  position: relative;
+  /* Existing filter section styles */
+}
+
+#banner {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  padding: 6px 12px;
+  background-color: rgb(24, 101, 56);
+  /* background-color: rgb(139, 194, 75); */
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px 3px 15px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.return-icon-container {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(216, 216, 216);
+  padding: 6px 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.return-icon-container:hover {
+  background-color: rgb(157, 157, 157);
+}
+
+.return-icon {
+  color: white;
+  font-size: 10px;
 }

@@ -39,7 +39,7 @@ const opportunities = [
   {
     "name": "Central Union Mission",
     "description": "Provides emergency shelter, transformation programs, veteran benefits, addiction recovery support, and food distribution services.",
-    "tags": ["DC", "Housing & Homelessness", "Food Insecurity"],
+    "tags": ["DC", "Housing & Homelessness", "Food Insecurity", "Community Development"],
     "link": "https://www.missiondc.org/get-involved/volunteer/"
   },
   {
@@ -1076,7 +1076,7 @@ function renderOpportunities(filteredOpportunities) {
     card.innerHTML = `
       <h4>${item.name}</h4>
       <p>${item.description}</p>
-      <a href="${item.link}" target="_blank">Learn More</a>
+      <a href="${item.link}" target="_blank">Volunteer Now</a>
     `;
 
     card.appendChild(tagsDiv);
@@ -1516,4 +1516,143 @@ document.getElementById('custom-popup').addEventListener('click', function(e) {
     if (e.target === this) {
         closePopup();
     }
+});
+
+// Show suggestions function
+function showSuggestions(searchTerm) {
+  const suggestionsContainer = document.getElementById('suggestions-container');
+  suggestionsContainer.innerHTML = '';
+
+  const searchLower = searchTerm.toLowerCase();
+  
+  // Get all unique tags
+  const allTags = [...new Set(opportunities.flatMap(item => item.tags))];
+  
+  // Filter tags and opportunities
+  const matchingTags = allTags.filter(tag => 
+      tag.toLowerCase().includes(searchLower)
+  );
+  const matchingOpportunities = opportunities.filter(item =>
+      item.name.toLowerCase().includes(searchLower)
+  );
+
+  // Add matching tags
+  if (matchingTags.length > 0) {
+      const tagHeader = document.createElement('div');
+      tagHeader.className = 'suggestion-item suggestion-header';
+      tagHeader.textContent = 'Tags:';
+      suggestionsContainer.appendChild(tagHeader);
+
+      matchingTags.forEach(tag => {
+          const tagElement = document.createElement('div');
+          tagElement.className = 'suggestion-item tag-suggestion';
+          tagElement.textContent = tag;
+          tagElement.addEventListener('click', () => {
+              const searchBar = document.getElementById('search-bar');
+              searchBar.value = tag;
+              searchBar.focus();
+          });
+          suggestionsContainer.appendChild(tagElement);
+      });
+  }
+
+  // Add matching opportunities
+  if (matchingOpportunities.length > 0) {
+      const oppHeader = document.createElement('div');
+      oppHeader.className = 'suggestion-item suggestion-header';
+      oppHeader.textContent = 'Opportunities:';
+      suggestionsContainer.appendChild(oppHeader);
+
+      matchingOpportunities.forEach(opp => {
+          const oppElement = document.createElement('div');
+          oppElement.className = 'suggestion-item opportunity-suggestion';
+          oppElement.textContent = opp.name;
+          oppElement.addEventListener('click', () => {
+              const searchBar = document.getElementById('search-bar');
+              searchBar.value = opp.name;
+              searchBar.focus();
+          });
+          suggestionsContainer.appendChild(oppElement);
+      });
+  }
+
+  suggestionsContainer.style.display = 'block';
+}
+
+// Update search bar input handler
+document.getElementById('search-bar').addEventListener('input', function() {
+  searchTerm = this.value.toLowerCase();
+  showSuggestions(this.value);
+});
+
+// Show suggestions when search bar is focused
+document.getElementById('search-bar').addEventListener('focus', function() {
+  showSuggestions(this.value);
+});
+
+// Close suggestions when clicking outside
+document.addEventListener('click', function(e) {
+  const suggestionsContainer = document.getElementById('suggestions-container');
+  const searchBar = document.getElementById('search-bar');
+  
+  if (!searchBar.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+    suggestionsContainer.style.display = 'none';
+  }
+});
+
+// Update search bar input handler
+document.getElementById('search-bar').addEventListener('input', function() {
+  searchTerm = this.value.toLowerCase();
+  showSuggestions(this.value);
+  applyFilters();
+});
+
+// Show suggestions when search bar is focused
+document.getElementById('search-bar').addEventListener('focus', function() {
+  showSuggestions(this.value);
+});
+
+// Keep suggestions visible when clicking on a suggestion
+document.getElementById('suggestions-container').addEventListener('click', function(e) {
+  if (e.target.classList.contains('suggestion-item')) {
+    const searchBar = document.getElementById('search-bar');
+    searchBar.focus();
+    showSuggestions(searchBar.value);
+  }
+});
+
+// Close suggestions when clicking outside
+document.addEventListener('click', function(e) {
+  const suggestionsContainer = document.getElementById('suggestions-container');
+  const searchBar = document.getElementById('search-bar');
+  
+  if (!searchBar.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+    suggestionsContainer.style.display = 'none';
+  }
+});
+
+// Show the return icon container when a suggestion is clicked
+document.getElementById('suggestions-container').addEventListener('click', function(e) {
+  if (e.target.classList.contains('suggestion-item')) {
+    const returnIconContainer = document.getElementById('return-icon-container');
+    returnIconContainer.style.display = 'flex';
+  }
+});
+
+// Show the return icon container when Enter key is pressed
+document.getElementById('search-bar').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const returnIconContainer = document.getElementById('return-icon-container');
+    returnIconContainer.style.display = 'flex';
+    // ... (rest of the code remains the same)
+  }
+});
+
+// Hide the return icon container when the search bar is cleared
+document.getElementById('search-bar').addEventListener('input', function() {
+  const returnIconContainer = document.getElementById('return-icon-container');
+  if (this.value === '') {
+    returnIconContainer.style.display = 'none';
+  }
+  // ... (rest of the code remains the same)
 });
