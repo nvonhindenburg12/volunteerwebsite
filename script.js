@@ -144,24 +144,11 @@ const opportunities = [
     "tags": ["DC", "Housing & Homelessness"],
     "link": "https://georgetownministrycenter.org/help/volunteer/"
   },
-
-  {
-    "name": "Girls on the Run",
-    "description": "Inspires girls to recognize their inner strength through research-based curricula including discussions, activities and running games.",
-    "tags": ["DC", "Youth Empowerment", "Sports"],
-    "link": "https://www.gotrdc.org/Volunteer"
-  },
   {
     "name": "Goods for Good DC",
     "description": "Partners with local nonprofits to provide critical care to economically disadvantaged, underserved, and vulnerable communities.",
     "tags": ["DC", "Social Advocacy & Activism", "Community Development"],
     "link": "https://goodsforgooddc.org/project/"
-  },
-  {
-    "name": "Habitat for Humanity",
-    "description": "Works in local communities to build and improve homes, believing everyone deserves a decent place to live.",
-    "tags": ["DC", "Housing & Homelessness", "Community Development"],
-    "link": "https://www.habitat.org/volunteer"
   },
   {
     "name": "Horizons Greater Washington",
@@ -178,7 +165,7 @@ const opportunities = [
   {
     "name": "Humane Rescue Alliance",
     "description": "Protects animals, supports families, and advocates for positive change to create a world where all animals can thrive.",
-    "tags": ["DC", "Animal Welfare"],
+    "tags": ["DC", "Remote Opportunities", "Animal Welfare"],
     "link": "https://www.humanerescuealliance.org/youth-volunteers"
   },
   {
@@ -213,12 +200,6 @@ const opportunities = [
     "link": "https://www.layc-dc.org/volunteer"
   },
   {
-    "name": "Latino Student Fund",
-    "description": "Addresses disparities in access to education for underrepresented students through independent school and college access programs.",
-    "tags": ["DC", "Education", "Youth Empowerment"],
-    "link": "https://latinostudentfund.org/volunteer/"
-  },
-  {
     "name": "LearnServe",
     "description": "Equips high school students with entrepreneurial vision and leadership skills to tackle social challenges.",
     "tags": ["DC", "Social Advocacy & Activism", "Youth Empowerment"],
@@ -235,12 +216,6 @@ const opportunities = [
     "description": "Provides warm, healthy meals on weekends and educates about hunger and homelessness in the community.",
     "tags": ["DC", "Food Insecurity", "Housing & Homelessness"],
     "link": "http://loavesandfishesdc.org/volunteer/"
-  },
-  {
-    "name": "Lutheran Social Services",
-    "description": "Offers hope through adoption, foster care, and refugee resettlement services.",
-    "tags": ["DC", "Immigration & Refugee Support"],
-    "link": "https://lssnca.org/help/volunteer.html"
   },
   {
     "name": "Martha's Table",
@@ -271,12 +246,6 @@ const opportunities = [
     "description": "Provides a vehicle for corporate firms and professionals to benefit less fortunate individuals and families, focusing on children.",
     "tags": ["DC", "Youth Empowerment", "Community Development"],
     "link": "http://www.projectgiveback.org/get-involved/"
-  },
-  {
-    "name": "Reading Partners",
-    "description": "Mobilizes communities to provide students with individualized reading support to read at grade level by fourth grade.",
-    "tags": ["DC", "Education", "Youth Empowerment"],
-    "link": "https://readingpartners.org/volunteer/"
   },
   {
     "name": "Rock Creek Conservancy",
@@ -313,12 +282,6 @@ const opportunities = [
     "description": "Meets immediate daily needs with food, clothing, and healthcare while helping break the cycle of homelessness.",
     "tags": ["DC", "Housing & Homelessness", "Food Insecurity", "Senior Outreach"],
     "link": "https://www.some.org/volunteer/volunteer-overview"
-  },
-  {
-    "name": "Solutions in Hometown Connections",
-    "description": "Supports refugee families during resettlement through tutoring, mentoring, and community connection.",
-    "tags": ["DC", "Immigration & Refugee Support", "Education"],
-    "link": "https://www.shconnections.org/volunteer.html"
   },
   {
     "name": "Spark the Wave",
@@ -416,10 +379,10 @@ const opportunities = [
         "link": "mailto:studentaction@gds.org?subject=Interest in GDS Voter Mobilization Initiative"
       },
       {
-        "name": "HopShop",
+        "name": "Hop Shop",
         "description": "Improves student well-being by selling products and healthy food, providing business learning opportunities, and donating proceeds to nonprofits aligned with shared values.",
         "tags": ["GDS Opportunities", "Education", "Community Development", "Food Insecurity"],
-        "link": "mailto:hopshop@gds.org?subject=Interest in HopShop"
+        "link": "mailto:hopshop@gds.org?subject=Interest in Hop Shop"
       },
       {
         "name": "Jobs to Help",
@@ -505,18 +468,6 @@ const opportunities = [
         "link": "https://www.fcmd.org/templates/articlecco_cdo/aid/720969/jewish/Volunteer.htm"
       },
       {
-        "name": "Girls on the Run",
-        "description": "Inspires girls to recognize their inner strength through research-based curricula including discussions, activities and running games.",
-        "tags": ["MD", "DC", "VA", "Youth Empowerment", "Sports"],
-        "link": "https://www.gotrdc.org/Volunteer"
-      },
-      {
-        "name": "Habitat for Humanity",
-        "description": "Works to build and improve homes, believing everyone deserves a decent place to live.",
-        "tags": ["MD", "DC", "VA", "Housing & Homelessness", "Community Development"],
-        "link": "https://www.habitat.org/volunteer"
-      },
-      {
         "name": "HART for Animals",
         "description": "A model for compassionate animal rescue and community involvement in saving companion animals.",
         "tags": ["MD", "Animal Welfare"],
@@ -579,7 +530,7 @@ const opportunities = [
       {
         "name": "Reading Partners",
         "description": "Provides individualized reading support to help students read at grade level by fourth grade.",
-        "tags": ["MD", "DC", "Education", "Youth Empowerment"],
+        "tags": ["MD", "DC", "Remote Opportunities", "Education", "Youth Empowerment"],
         "link": "https://readingpartners.org/volunteer/"
       },
       {
@@ -595,22 +546,10 @@ const opportunities = [
         "link": "https://www.shepherdstable.org/volunteer-opportunities/"
       },
       {
-        "name": "Solutions in Hometown Connections",
-        "description": "Supports refugee families during resettlement through tutoring, mentoring, and community connection.",
-        "tags": ["MD", "DC", "VA", "Immigration & Refugee Support", "Education"],
-        "link": "https://www.shconnections.org/volunteer"
-      },
-      {
         "name": "Suburban Hospital",
         "description": "A community-based hospital serving Montgomery County as the designated trauma center since 1943.",
         "tags": ["MD", "Healthcare"],
         "link": "https://www.hopkinsmedicine.org/volunteer-services/suburban"
-      },
-      {
-        "name": "Tacy Foundation",
-        "description": "Empowers youth to share hope through music with hospital patients, senior citizens, and disadvantaged youth.",
-        "tags": ["MD", "Healthcare", "Youth Empowerment", "Senior Outreach"],
-        "link": "https://www.tacyfoundation.org/pages/about-us"
       },
       {
         "name": "Washington Hebrew Home",
@@ -642,12 +581,6 @@ const opportunities = [
             "link": "https://afac.org/volunteer/"
           },
           {
-            "name": "Chesapeake Bay Foundation",
-            "description": "The largest independent conservation organization dedicated solely to saving the Bay.",
-            "tags": ["VA", "MD", "Environmental Justice", "Research & Citizen Science"],
-            "link": "https://www.cbf.org/join-us/volunteer/"
-          },
-          {
             "name": "Food for Others",
             "description": "Provides food assistance through rescue operations and food drives for emergency needs and working poor families.",
             "tags": ["VA", "Food Insecurity", ],
@@ -674,7 +607,7 @@ const opportunities = [
           {
             "name": "Habitat for Humanity",
             "description": "Works to build and improve homes, believing everyone deserves a decent place to live.",
-            "tags": ["VA", "DC", "MD", "Housing & Homelessness", "Community Development"],
+            "tags": ["VA", "DC", "MD", "Travel Experiences", "Housing & Homelessness", "Community Development"],
             "link": "https://www.habitat.org/volunteer"
           },
           {
@@ -688,12 +621,6 @@ const opportunities = [
             "description": "Volunteer-powered nonprofit dedicated to rescuing homeless, neglected, and abandoned animals from euthanasia.",
             "tags": ["VA", "Animal Welfare"],
             "link": "https://luckydoganimalrescue.salsalabs.org/signuptobealuckydogyouthvolunteer/index.html"
-          },
-          {
-            "name": "Lutheran Social Services",
-            "description": "Offers hope through adoption, foster care, and refugee resettlement services.",
-            "tags": ["VA", "DC", "MD", "Immigration & Refugee Support", ],
-            "link": "https://lssnca.org/help/volunteer.html"
           },
           {
             "name": "Meals on Wheels",
@@ -716,7 +643,7 @@ const opportunities = [
           {
             "name": "Solutions in Hometown Connections",
             "description": "Supports refugee families during resettlement through tutoring, mentoring, and community connection.",
-            "tags": ["VA", "DC", "MD", "Immigration & Refugee Support", "Education"],
+            "tags": ["VA", "DC", "MD", "Remote Opportunities", "Immigration & Refugee Support", "Education"],
             "link": "https://www.shconnections.org/volunteer"
           },
           {
@@ -761,12 +688,6 @@ const opportunities = [
                 "link": "https://freemindsbookclub.org/get-involved/intern-with-us"
               },
               {
-                "name": "Humane Rescue Alliance",
-                "description": "Enables remote volunteers to create DIY toys and supplies for animal shelters.",
-                "tags": ["Remote Opportunities", "Animal Welfare"],
-                "link": "https://www.humanerescuealliance.org/donate-hra"
-              },
-              {
                 "name": "Intutorly",
                 "description": "Connects volunteer tutors with students for high-quality, one-on-one online tutoring to bridge educational divides.",
                 "tags": ["Remote Opportunities", "Education", "Youth Empowerment"],
@@ -775,7 +696,7 @@ const opportunities = [
               {
                 "name": "Latino Student Fund",
                 "description": "Provides academic foundation to underserved PreK-12th-grade students of Hispanic descent through virtual tutoring.",
-                "tags": ["Remote Opportunities", "Education", "Youth Empowerment"],
+                "tags": ["DC", "Remote Opportunities", "Education", "Youth Empowerment"],
                 "link": "https://latinostudentfund.volunteerhub.com/"
               },
               {
@@ -791,18 +712,6 @@ const opportunities = [
                 "link": "https://docs.google.com/forms/d/e/1FAIpQLScQSA8C8zh_F5Oxt4Ppmed-dyRUpxzp3SW8MH4sknxl911q2g/viewform"
               },
               {
-                "name": "Reading Partners",
-                "description": "Partners with under-resourced schools to provide one-on-one reading support through structured virtual tutoring.",
-                "tags": ["Remote Opportunities", "Education", "Youth Empowerment"],
-                "link": "https://readingpartners.org/volunteer-washington-dc/"
-              },
-              {
-                "name": "Solutions in Hometown Connections",
-                "description": "Coordinates remote volunteer tutors to support refugee families during resettlement through education and mentoring.",
-                "tags": ["Remote Opportunities", "Education", "Immigration & Refugee Support"],
-                "link": "https://www.shconnections.org/volunteer.html"
-              },
-              {
                 "name": "StoryCorps",
                 "description": "Preserves and shares humanity's stories to build connections and create a more compassionate world through recorded conversations.",
                 "tags": ["Remote Opportunities", "Research & Citizen Science", "Community Development"],
@@ -811,7 +720,7 @@ const opportunities = [
               {
                 "name": "Tacy Foundation",
                 "description": "Empowers youth to share hope through music with hospital patients, seniors, and disadvantaged youth.",
-                "tags": ["Remote Opportunities", "Youth Empowerment", "Senior Outreach", "Healthcare"],
+                "tags": ["MD", "Remote Opportunities", "Youth Empowerment", "Senior Outreach", "Healthcare"],
                 "link": "https://www.tacyfoundation.org/pages/about-us"
               },
               {
@@ -885,12 +794,6 @@ const opportunities = [
                 "description": "Combines community service, immersive learning, and adventure to inspire students to become global leaders and create positive change.",
                 "tags": ["Travel Experiences", "Youth Empowerment", "Education"],
                 "link": "https://www.experiencegla.com/"
-              },
-              {
-                "name": "Habitat for Humanity",
-                "description": "Works globally to build and improve homes, with operations across all 50 states and approximately 70 countries.",
-                "tags": ["Travel Experiences", "Housing & Homelessness", "Community Development"],
-                "link": "https://www.habitat.org/volunteer"
               },
               {
                 "name": "Mitzvah Corps",
@@ -1015,9 +918,9 @@ function resetFilters() {
   selectedTagElements.forEach(tag => tag.classList.remove('selected'));
   
   //Reset the toggle switch
-  // const filterToggle = document.getElementById('filterToggle');
-  // filterToggle.checked = false;
-  // isStrictFiltering = false;
+  const filterToggle = document.getElementById('filterToggle');
+  filterToggle.checked = false;
+  isStrictFiltering = false;
   
   // Reset tags count and array
   selectedTags = [];
@@ -1656,3 +1559,60 @@ document.getElementById('search-bar').addEventListener('input', function() {
   }
   // ... (rest of the code remains the same)
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Add indices to opportunity cards
+  document.querySelectorAll('.opportunity-card').forEach((card, index) => {
+    card.style.setProperty('--card-index', index);
+  });
+  
+  // Add indices to tags
+  document.querySelectorAll('.tag').forEach((tag, index) => {
+    tag.style.setProperty('--tag-index', index);
+  });
+});
+
+
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const cards = document.querySelectorAll(".opportunity-card");
+  
+//   if (cards.length < 3) return; // Ensure there are enough cards to avoid errors
+
+//   // Determine dealer position (between card 2 and card 3 in row 1)
+//   const dealerCard1 = cards[1]; // Second card in row 1
+//   const dealerCard2 = cards[2]; // Third card in row 1
+//   const dealerX = (dealerCard1.offsetLeft + dealerCard2.offsetLeft) / 2;
+//   const dealerY = dealerCard1.offsetTop;
+
+//   // Animate only the first 20 cards
+//   cards.forEach((card, index) => {
+//     if (index < 20) {
+//       card.classList.add("dealt");
+
+//       // Set initial position at the dealer's hand
+//       card.style.position = "absolute";
+//       card.style.left = `${dealerX}px`;
+//       card.style.top = `${dealerY}px`;
+//       card.style.opacity = "0";
+
+//       // Staggered dealing effect
+//       setTimeout(() => {
+//         card.style.opacity = "1";
+//         card.style.transform = "translate(0, 0) scale(1)";
+//         card.style.left = "";
+//         card.style.top = "";
+//         card.style.transition = `all 0.4s ease-out ${index * 100}ms`;
+
+//         // Reset to normal after dealing
+//         setTimeout(() => {
+//           card.style.position = "relative";
+//         }, index * 100 + 500);
+//       }, index * 100);
+//     }
+//   });
+// });
