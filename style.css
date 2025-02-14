@@ -6,7 +6,16 @@ body {
   color: #333;
 }
 
-
+.logo-banner {
+  background-color: rgb(24, 101, 56);
+  text-align: left;
+  padding: 15px 50px;
+  width: 100%;
+  margin: 1px 5px 0 5px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}
 
 .logo-banner img {
   max-height: 50px;
