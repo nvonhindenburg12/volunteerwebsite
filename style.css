@@ -18,7 +18,7 @@ body {
 }
 
 .logo-banner img {
-  max-height: 50px;
+  max-height: 40px;
   margin-left: -30px;
 }
 header {
@@ -47,7 +47,7 @@ header {
 
 #suggestions-container {
   position: absolute;
-  width: 650px;
+  width: 100%;
   top: 100%;
   left: 0;
   right: 0;
@@ -164,6 +164,41 @@ h1:hover::after {
   box-shadow: 0 4px 15px rgba(24, 101, 56, 0.15);
 }
 
+#banner {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  padding: 6px 12px;
+  background-color: rgb(24, 101, 56);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold; 
+  border-radius: 3px 3px 15px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add these properties for animation /   transform: translateY(-100%); / Start hidden up inside the filter box /   opacity: 0;   animation: slideDown 0.8s ease-out forwards;   animation-delay: 0.5s; / Wait half a second before starting */ 
+
+  /* Add these properties for animation */
+  transform: translateY(-100%); /* Start hidden up inside the filter box */
+  opacity: 0;
+  animation: slideDown 0.8s ease-out forwards;
+  animation-delay: 0.5s; /* Wait half a second before starting */
+}
+
+/* Add the animation keyframes */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 
+
 .filter-section {
   padding: 35px 50px;
   background-color: #ffffff;
@@ -172,7 +207,6 @@ h1:hover::after {
   border-radius: 15px 15px 1px 15px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
-
 .filter-header {
   display: flex;
   justify-content: space-between;
@@ -501,41 +535,6 @@ input:checked + .slider:before {
   position: relative;
   /* Existing filter section styles */
 }
-
-#banner {
-  position: absolute;
-  bottom: -30px;
-  right: 0;
-  padding: 6px 12px;
-  background-color: rgb(24, 101, 56);
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 3px 3px 15px 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-  /* Add these properties for animation */
-  transform: translateY(-100%); /* Start hidden up inside the filter box */
-  opacity: 0;
-  animation: slideDown 0.8s ease-out forwards;
-  animation-delay: 0.5s; /* Wait half a second before starting */
-}
-
-/* Add the animation keyframes */
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 
 .return-icon-container {
   position: absolute;
