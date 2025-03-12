@@ -26,23 +26,25 @@
         </div>
     </header>
 
-    <section class="filter-section">
-        <div class="filter-header">
-            <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
-            <div class="filter-toggle">
-                <label class="switch">
-                    <input type="checkbox" id="filterToggle">
-                    <span class="slider round"></span>
-                </label>
-                <span class="toggle-label">
-                    Opportunities with all selected tags
-                    <span class="info-icon" data-info="If enabled, only opportunities that match EVERY tag you selected will be displayed.">ⓘ</span>
-                </span>
-            </div>
-        </div>
-        <div id="banner">Made by Nick von Hindenburg '26 and John Morsberger '26</div>
-        <div id="tags-container"></div>
-    </section>
+    <div class="filter-container">
+      <section class="filter-section">
+          <div class="filter-header">
+              <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
+              <div class="filter-toggle">
+                  <label class="switch">
+                      <input type="checkbox" id="filterToggle">
+                      <span class="slider round"></span>
+                  </label>
+                  <span class="toggle-label">
+                      Opportunities with all selected tags
+                      <span class="info-icon" data-info="If enabled, only opportunities that match EVERY tag you selected will be displayed.">ⓘ</span>
+                  </span>
+              </div>
+          </div>
+          <div id="tags-container"></div>
+      </section>
+      <div id="banner">Made by Nick von Hindenburg '26 and John Morsberger '26</div>
+    </div>
 
     <section id="opportunities-container"></section>
 
@@ -56,7 +58,7 @@
     </div>
 
 
-
+    <script src="opportunities.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

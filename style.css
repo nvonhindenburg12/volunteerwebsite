@@ -7,7 +7,7 @@ body {
 }
 
 .logo-banner {
-  background-color: rgb(24, 101, 56);
+  background-color: rgb(24, 101, 56);;
   text-align: left;
   padding: 15px 50px;
   width: 100%;
@@ -164,8 +164,14 @@ h1:hover::after {
   box-shadow: 0 4px 15px rgba(24, 101, 56, 0.15);
 }
 
+.filter-container {
+  position: relative;
+  margin: 20px 50px;
+}
+
 #banner {
   position: absolute;
+  z-index: 1;
   bottom: -30px;
   right: 0;
   padding: 6px 12px;
@@ -202,10 +208,10 @@ h1:hover::after {
 .filter-section {
   padding: 35px 50px;
   background-color: #ffffff;
-  margin: 20px 50px;
   margin-bottom: 40px;
   border-radius: 15px 15px 1px 15px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 .filter-header {
   display: flex;
