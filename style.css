@@ -442,8 +442,27 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 768px) {
-  .search-container {
-    width: 90%;
+  .opportunity-card {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+  
+  #opportunities-container {
+    padding: 10px 15px;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .filter-container, 
+  #opportunities-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100% - 10px);
   }
 
   .filter-section {
