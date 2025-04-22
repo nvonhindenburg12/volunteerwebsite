@@ -1,25 +1,29 @@
+/* Base Styles */
 body {
   font-family: 'Nunito', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
   color: #333;
+  overflow-x: hidden;
 }
 
+/* Header & Logo */
 .logo-banner {
   background-color: rgb(20, 102, 54);
   text-align: left;
-  padding: 15px 50px;
+  padding: 12px 20px;
   width: 100%;
-  margin: 1px 5px 0 5px;
   box-sizing: border-box;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-banner img {
   max-height: 40px;
-  margin-left: -30px;
 }
 
 header {
@@ -27,53 +31,37 @@ header {
   color: #333;
   padding: 0;
   text-align: center;
-  margin: 0;
   animation: fadeInDown 0.8s ease-out;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logo-banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
 }
 
 .suggest-link {
-  color: rgb(39, 38, 38);
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   padding: 8px 12px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.175);
   transition: background-color 0.3s ease;
-  margin-right: -25px;
 }
 
 .suggest-link:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
-  .suggest-link {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-}
-
+/* Search */
 .search-container {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   text-align: center;
 }
-
-
-
 
 #suggestions-container {
   position: absolute;
@@ -95,6 +83,7 @@ header {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  text-align: left;
 }
 
 #suggestions-container .suggestion-item:hover {
@@ -106,6 +95,7 @@ header {
   font-weight: bold;
   background-color: #f5f5f5;
   color: #333;
+  text-align: left;
 }
 
 #suggestions-container .tag-suggestion {
@@ -118,43 +108,32 @@ header {
 }
 
 #suggestions-container::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 #suggestions-container::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 #suggestions-container::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 #suggestions-container::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Headings */
 h1 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 30px 0 25px;
-  padding: 0 50px;
+  margin: 20px 0;
+  padding: 0 20px;
   color: rgb(20, 102, 54);
   position: relative;
   display: inline-block;
-  
 }
 
 h1::after {
@@ -175,8 +154,7 @@ h1:hover::after {
 
 #search-bar {
   width: 100%;
-  max-width: 700px;  /* Or whatever max-width you prefer */
-  padding: 15px 50px 15px 25px;
+  padding: 12px 20px;
   font-size: 16px;
   font-family: 'Nunito', 'Helvetica Neue', sans-serif;
   border: 2px solid #e0e0e0;
@@ -184,7 +162,6 @@ h1:hover::after {
   background-color: #ffffff;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -194,9 +171,10 @@ h1:hover::after {
   box-shadow: 0 4px 15px rgba(24, 101, 56, 0.15);
 }
 
+/* Filters */
 .filter-container {
   position: relative;
-  margin: 20px 50px;
+  margin: 0 15px 40px;
 }
 
 #banner {
@@ -211,72 +189,56 @@ h1:hover::after {
   font-weight: bold; 
   border-radius: 3px 3px 15px 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Add these properties for animation /   transform: translateY(-100%); / Start hidden up inside the filter box /   opacity: 0;   animation: slideDown 0.8s ease-out forwards;   animation-delay: 0.5s; / Wait half a second before starting */ 
-
-  /* Add these properties for animation */
-  transform: translateY(-100%); /* Start hidden up inside the filter box */
+  transform: translateY(-100%);
   opacity: 0;
   animation: slideDown 0.8s ease-out forwards;
-  animation-delay: 0.5s; /* Wait half a second before starting */
+  animation-delay: 0.5s;
 }
 
-/* Add the animation keyframes */
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-} 
-
 .filter-section {
-  padding: 35px 50px;
+  padding: 20px;
   background-color: #ffffff;
-  margin-bottom: 40px;
-  border-radius: 15px 15px 1px 15px;
+  margin-bottom: 30px;
+  border-radius: 15px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
+
 .filter-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
 h3 {
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin: 0;
   color: rgb(24, 101, 56);
-  margin-right: auto;
 }
 
 #tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 }
 
 .tag {
   background-color: rgb(24, 101, 56);
   color: white;
-  padding: 8px 20px;
+  padding: 6px 14px;
   border-radius: 30px;
   cursor: pointer;
   font-size: 14px;
   transition: transform 0.3s ease-in-out;
+  white-space: nowrap;
 }
 
 .tag:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .tag.selected::before {
@@ -294,11 +256,12 @@ h3 {
   background-color: #8bc34a;
 }
 
+/* Opportunities */
 #opportunities-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px 50px;
+  gap: 20px;
+  padding: 0 15px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -307,7 +270,8 @@ h3 {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 280px;
+  width: 100%;
+  max-width: 340px;
   padding: 20px;
   text-align: left;
   position: relative;
@@ -317,11 +281,11 @@ h3 {
 .opportunity-card:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1),
               0 0 0 5px rgb(24, 101, 56);
-  transform: scale(1.04);
+  transform: translateY(-5px);
 }
 
 .opportunity-card h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(24, 101, 56);
   margin: 0;
 }
@@ -349,21 +313,24 @@ h3 {
 }
 
 .opportunity-card .tags .tag {
-  font-size: 13px;
-  padding: 8px 10px;
+  font-size: 12px;
+  padding: 4px 8px;
 }
 
+/* Toggle Switch */
 .filter-toggle {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 24px;
+  width: 44px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .switch input {
@@ -381,7 +348,7 @@ h3 {
   bottom: 0;
   background-color: rgb(157, 157, 157);
   transition: .4s;
-  border-radius: 24px;
+  border-radius: 22px;
 }
 
 .slider:before {
@@ -389,8 +356,8 @@ h3 {
   content: "";
   height: 16px;
   width: 16px;
-  left: 4px;
-  bottom: 4px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
@@ -401,12 +368,13 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(22px);
 }
 
 .toggle-label {
-  font-size: 14px;
+  font-size: 13px;
   color: rgb(24, 101, 56);
+  max-width: 200px;
 }
 
 .tag.reset-button {
@@ -417,11 +385,11 @@ input:checked + .slider:before {
   background-color: #ff5252;
 }
 
-/* Info icon tooltip */
+/* Info Icon */
 .info-icon {
   cursor: pointer;
   position: relative;
-  padding: 5px;
+  padding: 2px 4px;
   display: inline-block;
 }
 
@@ -451,19 +419,20 @@ input:checked + .slider:before {
 /* Scroll to top button */
 .scroll-top-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgb(24, 101, 56);
   color: white;
   border: none;
   cursor: pointer;
   display: none;
-  font-size: 24px;
+  font-size: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  z-index: 100;
 }
 
 .scroll-top-btn:hover {
@@ -471,37 +440,7 @@ input:checked + .slider:before {
   transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-  .search-container {
-    width: 90%;
-  }
-
-  .filter-section {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  .opportunity-card {
-    width: 100%;
-  }
-
-  .filter-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .tag {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-  
-  .filter-toggle {
-    width: 100%;
-    justify-content: flex-end;
-  }
-}
-
+/* Popup */
 .popup-container {
   display: none;
   position: fixed;
@@ -518,522 +457,19 @@ input:checked + .slider:before {
 
 .popup-content {
   background-color: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease-out;
-}
-
-.popup-content p {
-  margin: 0 0 20px 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.close-popup {
-  background-color: rgb(24, 101, 56);
-  color: white;
-  border: none;
-  padding: 10px 30px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.close-popup:hover {
-  background-color: #8bc34a;
-  transform: translateY(-2px);
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.filter-section {
-  position: relative;
-  /* Existing filter section styles */
-}
-
-.return-icon-container {
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgb(216, 216, 216);
-  padding: 6px 12px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.return-icon-container:hover {
-  background-color: rgb(157, 157, 157);
-}
-
-.return-icon {
-  color: white;
-  font-size: 10px;
-}
-
-
-
-/* body {
-  font-family: 'Nunito', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #333;
-}
-
-.logo-banner {
-  background-color: rgb(24, 101, 56);
-  text-align: left;
-  padding: 15px 50px;
-  width: calc(100% - 10px);
-  margin: 2px 5px 0 5px;
-  box-sizing: border-box;
-  border-radius: 25px;
-  position: relative;
-  z-index: 5;
-  animation: fadeIn 0.5s ease-out;
-}
-
-.logo-banner img {
-  max-height: 50px;
-  margin-left: -30px;
-}
-
-header {
-  background-color: #ffffff;
-  color: #333;
-  padding: 0;
-  text-align: center;
-  margin: 0;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 5;
-  animation: fadeIn 0.5s ease-out;
-}
-
-.search-container {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  z-index: 4;
-}
-
-#suggestions-container {
-  position: absolute;
-  width: 650px;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  max-height: 300px;
-  overflow-y: auto;
-  display: none;
-}
-
-#suggestions-container .suggestion-item {
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#suggestions-container .suggestion-item:hover {
-  background-color: rgba(24, 101, 56, 0.1);
-}
-
-#suggestions-container .suggestion-header {
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-#suggestions-container .tag-suggestion {
-  color: rgb(24, 101, 56);
-  font-weight: 500;
-}
-
-#suggestions-container .opportunity-suggestion {
-  color: #333;
-}
-
-#suggestions-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-#suggestions-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 0 15px 15px 0;
-}
-
-#suggestions-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-#suggestions-container::-webkit-scrollbar-thumb:hover {
-  background: #666;
-}
-
-h1 {
-  font-size: 32px;
-  font-weight: bold;
-  margin: 30px 0 25px;
-  padding: 0 50px;
-  color: rgb(20, 102, 54);
-  position: relative;
-  display: inline-block;
-  z-index: 4;
-}
-
-h1::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -5px;
-  left: 50%;
-  background-color: rgb(24, 101, 56);
-  transition: all 0.5s ease;
-}
-
-h1:hover::after {
   width: 80%;
-  left: 10%;
-}
-
-#search-bar {
-  width: 100%;
-  max-width: 700px;
-  padding: 15px 50px 15px 25px;
-  font-size: 16px;
-  font-family: 'Nunito', 'Helvetica Neue', sans-serif;
-  border: 2px solid #e0e0e0;
-  border-radius: 30px;
-  background-color: #ffffff;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 4;
-}
-
-#search-bar:focus {
-  outline: none;
-  border-color: rgb(24, 101, 56);
-  box-shadow: 0 4px 15px rgba(24, 101, 56, 0.15);
-}
-
-.filter-section {
-  padding: 35px 50px;
-  background-color: #ffffff;
-  margin: 20px 50px;
-  margin-bottom: 40px;
-  border-radius: 15px 15px 1px 15px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 4;
-}
-
-.filter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  color: rgb(24, 101, 56);
-  margin-right: auto;
-}
-
-#tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-  position: relative;
-  z-index: 4;
-}
-
-.tag {
-  background-color: rgb(24, 101, 56);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease-in-out;
-}
-
-.tag:hover {
-  transform: scale(1.1);
-}
-
-.tag.selected::before {
-  content: "✔";
-  margin-right: 5px;
-}
-
-.tag-DC,
-.tag-MD,
-.tag-VA, 
-.tag-GDSOpportunities,
-.tag-RemoteOpportunities,
-.tag-TravelExperiences {
-  background-color: #8bc34a;
-}
-
-#opportunities-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px 50px;
-  justify-content: center;
+  max-width: 300px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  margin-top: -20px;
-}
-
-.opportunity-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 280px;
-  padding: 20px;
-  text-align: left;
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease;
-  animation: slideUpFromBehind 0.8s ease-out;
-  animation-fill-mode: both;
-  animation-delay: calc(var(--card-index, 0) * 0.1s);
-}
-
-.opportunity-card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1),
-              0 0 0 5px rgb(24, 101, 56);
-  transform: scale(1.04);
-}
-
-.opportunity-card h4 {
-  font-size: 20px;
-  color: rgb(24, 101, 56);
-  margin: 0;
-}
-
-.opportunity-card p {
-  font-size: 14px;
-  margin: 10px 0;
-  color: #555;
-}
-
-.opportunity-card a {
-  color: rgb(24, 101, 56);
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.opportunity-card a:hover {
-  color: #8bc34a;
-}
-
-.opportunity-card .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.opportunity-card .tags .tag {
-  font-size: 13px;
-  padding: 8px 10px;
-}
-
-.filter-toggle {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(157, 157, 157);
-  transition: .4s;
-  border-radius: 24px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: rgb(24, 101, 56);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.toggle-label {
-  font-size: 14px;
-  color: rgb(24, 101, 56);
-}
-
-.tag.reset-button {
-  background-color: #ff6b6b;
-}
-
-.tag.reset-button:hover {
-  background-color: #ff5252;
-}
-
-.info-icon {
-  cursor: pointer;
-  position: relative;
-  padding: 5px;
-  display: inline-block;
-  z-index: 4;
-}
-
-.info-icon::after {
-  content: attr(data-info);
-  display: none;
-  position: absolute;
-  background-color: rgb(157, 157, 157);
-  color: #fff;
-  padding: 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: normal;
-  z-index: 1;
-  width: 200px;
-  left: 50%;
-  bottom: 100%;
-  transform: translateX(-50%);
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.info-icon:hover::after {
-  display: block;
-}
-
-.scroll-top-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgb(24, 101, 56);
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: none;
-  font-size: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  z-index: 6;
-}
-
-.scroll-top-btn:hover {
-  background-color: #8bc34a;
-  transform: translateY(-3px);
-}
-
-.popup-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .popup-content p {
   margin: 0 0 20px 0;
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -1041,11 +477,13 @@ input:checked + .slider:before {
   background-color: rgb(24, 101, 56);
   color: white;
   border: none;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 25px;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
+  max-width: 120px;
 }
 
 .close-popup:hover {
@@ -1053,59 +491,11 @@ input:checked + .slider:before {
   transform: translateY(-2px);
 }
 
-#banner {
-  position: absolute;
-  bottom: -30px;
-  right: 0;
-  padding: 6px 12px;
-  background-color: rgb(24, 101, 56);
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 3px 3px 15px 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 4;
-}
-
-.return-icon-container {
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgb(216, 216, 216);
-  padding: 6px 12px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 4;
-}
-
-.return-icon-container:hover {
-  background-color: rgb(157, 157, 157);
-}
-
-.return-icon {
-  color: white;
-  font-size: 10px;
-}
-/*  
-/*
-@keyframes fadeIn {
+/* Animations */
+@keyframes fadeInDown {
   from {
     opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUpFromBehind {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -1113,68 +503,170 @@ input:checked + .slider:before {
   }
 }
 
-@keyframes popIn {
+@keyframes slideDown {
   0% {
+    transform: translateY(-100%);
     opacity: 0;
-    transform: scale(0.8);
   }
   50% {
-    transform: scale(1.1);
+    opacity: 1;
   }
   100% {
+    transform: translateY(0);
     opacity: 1;
-    transform: scale(1);
   }
 }
 
-/* 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  .search-container {
-    width: 90%;
+  /* Header adjustments */
+  .logo-banner {
+    padding: 10px 15px;
   }
-
+  
+  .logo-banner img {
+    max-height: 35px;
+  }
+  
+  .suggest-link {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+  
+  /* Filter adjustments */
   .filter-section {
-    margin: 20px;
-    padding: 20px;
+    padding: 15px;
   }
-
-  .opportunity-card {
-    width: 100%;
-  }
-
+  
   .filter-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
-  }
-
-  .tag {
-    font-size: 12px;
-    padding: 6px 12px;
   }
   
   .filter-toggle {
     width: 100%;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-top: 10px;
   }
-
-  .return-icon-container {
-    right: -40px;
+  
+  .toggle-label {
+    font-size: 12px;
   }
-
-  #opportunities-container {
-    padding: 10px;
-    gap: 15px;
+  
+  /* Tag adjustments */
+  .tag {
+    font-size: 12px;
+    padding: 5px 10px;
   }
-
-  #suggestions-container {
-    width: 100%;
-    left: 0;
-    right: 0;
+  
+  /* Opportunity cards */
+  .opportunity-card {
+    padding: 15px;
+  }
+  
+  /* Banner position */
+  #banner {
+    font-size: 10px;
+    padding: 5px 10px;
   }
 }
 
-/* 
+@media (max-width: 480px) {
+  /* Smaller screens */
+  .logo-banner {
+    padding: 8px 10px;
+  }
+  
+  .logo-banner img {
+    max-height: 30px;
+  }
+  
+  .suggest-link {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+  
+  #search-bar {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .filter-container {
+    margin: 0 10px 35px;
+  }
+  
+  /* Stacked filter toggle */
+  .filter-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  /* More compact opportunity cards */
+  .opportunity-card {
+    padding: 12px;
+  }
+  
+  .opportunity-card h4 {
+    font-size: 16px;
+  }
+  
+  .opportunity-card p {
+    font-size: 13px;
+  }
+  
+  .opportunity-card .tags .tag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  /* Smaller popup */
+  .popup-content {
+    padding: 20px;
+    max-width: 250px;
+  }
+  
+  .popup-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .close-popup {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -1182,4 +674,4 @@ input:checked + .slider:before {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-} */
+}

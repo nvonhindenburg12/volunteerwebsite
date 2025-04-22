@@ -21,32 +21,29 @@
         </div>
         <h1>Volunteer Opportunities</h1>
         <div class="search-container">
-          <input type="text" id="search-bar" placeholder="Search volunteer opportunities">
-          <!-- <div id="return-icon-container" class="return-icon-container">
-            <span id="return-icon" class="return-icon">↵</span>
-          </div> -->
-          <div id="suggestions-container"></div>
+            <input type="text" id="search-bar" placeholder="Search volunteer opportunities">
+            <div id="suggestions-container"></div>
         </div>
     </header>
 
     <div class="filter-container">
-      <section class="filter-section">
-          <div class="filter-header">
-              <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
-              <div class="filter-toggle">
-                  <label class="switch">
-                      <input type="checkbox" id="filterToggle">
-                      <span class="slider round"></span>
-                  </label>
-                  <span class="toggle-label">
-                      Opportunities with all selected tags
-                      <span class="info-icon" data-info="If enabled, only opportunities that have EVERY tag you selected will be displayed, rather than opportunities with at least one tag selected.">ⓘ</span>
-                  </span>
-              </div>
-          </div>
-          <div id="tags-container"></div>
-      </section>
-      <div id="banner">Made by Nick von Hindenburg '26 and John Morsberger '26</div>
+        <section class="filter-section">
+            <div class="filter-header">
+                <h3>Filter by Interests <span id="selected-count">(0)</span></h3>
+                <div class="filter-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="filterToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label">
+                        Opportunities with all selected tags
+                        <span class="info-icon" data-info="If enabled, only opportunities that have EVERY tag you selected will be displayed, rather than opportunities with at least one tag selected.">ⓘ</span>
+                    </span>
+                </div>
+            </div>
+            <div id="tags-container"></div>
+        </section>
+        <div id="banner">Made by Nick von Hindenburg '26 and John Morsberger '26</div>
     </div>
 
     <section id="opportunities-container"></section>
@@ -54,12 +51,11 @@
     <button id="scroll-top" class="scroll-top-btn">⬆</button>
 
     <div id="custom-popup" class="popup-container">
-      <div class="popup-content">
-          <p>Please select a suggested tag or opportunity</p>
-          <button onclick="closePopup()" class="close-popup">OK</button>
-      </div>
+        <div class="popup-content">
+            <p>Please select a suggested tag or opportunity</p>
+            <button onclick="closePopup()" class="close-popup">OK</button>
+        </div>
     </div>
-
 
     <script src="opportunities.js"></script>
     <script src="script.js"></script>
