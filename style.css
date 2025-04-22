@@ -50,7 +50,7 @@ header {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.175);
   transition: background-color 0.3s ease;
-  margin-right: -25px;
+  margin-right: -px;
 }
 
 .suggest-link:hover {
