@@ -435,15 +435,15 @@ input:checked + .slider:before {
   display: block;
 }
 
-/* Scroll to top button */
+/* Update the scroll-top-btn styling */
 .scroll-top-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: rgb(24, 101, 56);
+  border-radius: 50%; /* This ensures it's circular on all devices */
+  background-color: rgb(24, 101, 56); /* The green color from your desktop version */
   color: white;
   border: none;
   cursor: pointer;
@@ -451,11 +451,45 @@ input:checked + .slider:before {
   font-size: 24px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  /* Remove any browser default styling */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Ensure no gradients or browser defaults are applied */
+  background-image: none;
 }
 
+/* For the arrow, you might want to explicitly set it as a Unicode character or SVG */
+.scroll-top-btn::before {
+  content: "⬆"; /* Unicode up arrow character */
+  font-size: 24px;
+  color: white;
+  /* Center the arrow in the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Make sure hover effects are consistent */
 .scroll-top-btn:hover {
   background-color: #8bc34a;
   transform: translateY(-3px);
+}
+
+/* Ensure the button looks the same on mobile */
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    /* Keep the same styling as desktop */
+    background-color: rgb(24, 101, 56);
+    border-radius: 50%;
+    /* Adjust size if needed for mobile */
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scroll-top-btn::before {
+    font-size: 22px;
+  }
 }
 
 .popup-container {
