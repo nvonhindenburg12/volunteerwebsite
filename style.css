@@ -434,7 +434,6 @@ input:checked + .slider:before {
 .info-icon:hover::after {
   display: block;
 }
-
 /* Update the scroll-top-btn styling */
 .scroll-top-btn {
   position: fixed;
@@ -456,6 +455,8 @@ input:checked + .slider:before {
   appearance: none;
   /* Ensure no gradients or browser defaults are applied */
   background-image: none;
+  /* Removes the tap highlight on iOS */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* For the arrow, you might want to explicitly set it as a Unicode character or SVG */
@@ -470,10 +471,29 @@ input:checked + .slider:before {
   height: 100%;
 }
 
-/* Make sure hover effects are consistent */
-.scroll-top-btn:hover {
-  background-color: #8bc34a;
+/* Hover effect - but only on non-touch devices */
+@media (hover: hover) {
+  .scroll-top-btn:hover {
+    background-color: #8bc34a;
+    transform: translateY(-3px);
+  }
+}
+
+/* Active state - visible on all devices, but brief on mobile */
+.scroll-top-btn:active {
+  background-color: #8bc34a; /* Light green */
   transform: translateY(-3px);
+  transition: all 0.1s ease; /* Shorter transition for responsiveness */
+}
+
+/* Add this to reset the button style after tap on mobile */
+@media (hover: none) {
+  /* This ensures the button returns to original state after tap */
+  .scroll-top-btn:focus {
+    background-color: rgb(24, 101, 56); /* Dark green */
+    transform: none;
+    transition-delay: 0.3s; /* Small delay to show the tap effect briefly */
+  }
 }
 
 /* Ensure the button looks the same on mobile */
