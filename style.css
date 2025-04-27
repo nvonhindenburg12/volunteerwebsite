@@ -461,7 +461,7 @@ input:checked + .slider:before {
 
 /* For the arrow, you might want to explicitly set it as a Unicode character or SVG */
 .scroll-top-btn::before {
-  content: "⬆"; /* Unicode up arrow character */
+  content: "⇧"; /* Unicode up arrow character */
   font-size: 24px;
   color: white;
   /* Center the arrow in the button */
